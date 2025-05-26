@@ -25,3 +25,20 @@ isort = "^6.0.1"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
 
+[tool.black]
+line-length = 119
+exclude = '''
+(
+  /(
+     \.git
+  )/
+)
+'''
+
+[tool.isort]
+line_length = 119
+
+[tool.mypy]
+disallow_untyped_defs = true
+warn_return_any = true
+exclude = 'venv'
