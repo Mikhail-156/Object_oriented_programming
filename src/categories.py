@@ -6,11 +6,9 @@ class Category:
 
     name: str
     description: str
-    products: list[Product]
+    __products: list[Product]
 
-    # Переменная на уровне класса по подсчету количества категорий
     category_count = 0
-    # Переменная на уровне класса по подсчету количества товаров
     product_count = 0
 
     def __init__(self, name: str, description: str, products: list[Product]):
@@ -18,7 +16,19 @@ class Category:
 
         self.name = name
         self.description = description
-        self.products = products
+        self.__products = products
 
         self.category_count += 1
         self.product_count += len(products) if products else 0
+
+    def add_product(self, product: Product) -> None:
+        """Метод для добавления продукта в атрибут products"""
+        self.__products.append(product)
+
+    @property
+    def products(self):
+        """Метод, который возвращает строку в следующем виде:
+        *Название продукта, 80 руб. Остаток: 15 шт.*"""
+        for products in self.__products:
+            products_srt = f"{products.name}, {products.price} руб. Остаток: {products.quantity}"
+            return products_srt
