@@ -34,4 +34,7 @@ class Product:
         """Сеттер для приватного атрибута price"""
         if new_price <= 0:
             print("Цена не должна быть нулевая или отрицательная")
+        else:
+            self.__price = new_price
             return
+

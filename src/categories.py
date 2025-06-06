@@ -30,5 +30,5 @@ class Category:
         """Метод, который возвращает строку в следующем виде:
         *Название продукта, 80 руб. Остаток: 15 шт.*"""
         for products in self.__products:
-            products_srt = f"{products.name}, {products.price} руб. Остаток: {products.quantity}"
+            products_srt = f"{products.name}, {products.price} руб. Остаток: {products.quantity} шт.\n"
             return products_srt
