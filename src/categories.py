@@ -27,9 +27,13 @@ class Category:
         all_quantity = sum(product.quantity for product in self.__products)
         return f"{self.name}, количество продуктов: {all_quantity} шт."
 
-    def add_product(self, product: Product) -> None:
+    def add_product(self, value) -> None:
         """Метод для добавления продукта в атрибут products"""
-        self.__products.append(product)
+        if not isinstance(value, Product):
+            raise TypeError
+        self.product_count += 1
+        return self.__products.append(value)
+
 
     @property
     def products(self):

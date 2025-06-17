@@ -15,13 +15,15 @@ class Product:
         self.quantity = quantity
 
     def __str__(self) -> str:
+        """Метод, который возвращает строку в следующем виде:
+                *Название продукта, 80 руб. Остаток: 15 шт.*"""
         return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        product_list_1 = self.quantity * self.__price
-        product_list_2 = other.__price * other.quantity
-        total_amount = product_list_1 + product_list_2
-        return f"{total_amount}"
+        """Метод для получения полной стоимости всех выбранных товаров на складе"""
+        if type(other) is self.__class__:
+            return self.__price * self.quantity + other.__price * other.quantity
+        raise TypeError
 
     @classmethod
     def new_product(cls, product):
