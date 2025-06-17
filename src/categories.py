@@ -34,7 +34,6 @@ class Category:
         self.product_count += 1
         return self.__products.append(value)
 
-
     @property
     def products(self):
         """Метод, который возвращает строку в следующем виде:

@@ -1,5 +1,6 @@
 from src.smartphone import Smartphone
 
+
 def test_smartphone(fixture_smartphone: Smartphone):
     """Тест"""
     assert fixture_smartphone.color == "Синий"
