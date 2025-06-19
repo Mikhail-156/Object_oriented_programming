@@ -40,3 +40,9 @@ def fixture_lawnGrass() -> LawnGrass:
     """Фикстура продукт"""
     product_1 = LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")
     return product_1
+
+@pytest.fixture
+def fixture_product_2():
+    product_1 = LawnGrass("Газонная трава", "Элитная трава для газона", 500.0, 20, "Россия", "7 дней", "Зеленый")
+    product_2 = Smartphone("Xiaomi Redmi Note 11", "1024GB, Синий", 31000.0, 14, 90.3, "Note 11", 1024, "Синий")
+    return product_1, product_2

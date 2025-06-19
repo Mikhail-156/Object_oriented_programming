@@ -17,3 +17,6 @@ def test_prod_1(fixture_product_1: Product) -> None:
     assert fixture_product_1.price == 31000.0
     assert fixture_product_1.quantity == 5
     assert fixture_product_1.__str__() == "Xiaomi Redmi Note 11, 31000.0 руб. Остаток: 5 шт."
+
+def test_prod_2(fixture_product, fixture_product_1):
+    assert fixture_product + fixture_product_1 == 1055000.0
