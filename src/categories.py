@@ -43,7 +43,7 @@ class Category:
             return products_srt
 
     def middle_price(self) -> float:
-        """Метод, который подсчитывает средний ценник всех товаров в данной категории"""
+        """Метод, который подсчитывает средний ценник всех товаров в выбранной категории"""
         quantity_sum = 0
         price_sum = 0
         for product in self.__products:
