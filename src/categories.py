@@ -41,3 +41,15 @@ class Category:
         for products in self.__products:
             products_srt = f"{products.name}, {products.price} руб. Остаток: {products.quantity} шт.\n"
             return products_srt
+
+    def middle_price(self) -> float:
+        """Метод, который подсчитывает средний ценник всех товаров в данной категории"""
+        quantity_sum = 0
+        price_sum = 0
+        for product in self.__products:
+            price_sum += product.price * product.quantity
+            quantity_sum += product.quantity
+        try:
+            return round(price_sum / quantity_sum, 2)
+        except ZeroDivisionError:
+            return 0
